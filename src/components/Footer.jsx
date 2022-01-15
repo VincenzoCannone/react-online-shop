@@ -65,23 +65,19 @@ const List = styled.ul`
 const ListItem = styled.li`
   width: 50%;
   margin-bottom: 10px;
+  cursor: pointer;
 `;
 
 const Right = styled.div`
   flex: 1;
   padding: 20px;
   ${mobile({ backgroundColor: "#fff8f8" })}
-
 `;
 
 const ContactItem = styled.div`
   margin-bottom: 20px;
   display: flex;
   align-items: center;
-`;
-
-const Payment = styled.img`
-    width: 50%;
 `;
 
 const Footer = () => {
@@ -94,20 +90,6 @@ const Footer = () => {
           the majority have suffered alteration in some form, by injected
           humour, or randomised words which don’t look even slightly believable.
         </Desc>
-        <SocialContainer>
-          <SocialIcon color="3B5999">
-            <Facebook />
-          </SocialIcon>
-          <SocialIcon color="E4405F">
-            <Instagram />
-          </SocialIcon>
-          <SocialIcon color="55ACEE">
-            <Twitter />
-          </SocialIcon>
-          <SocialIcon color="E60023">
-            <Pinterest />
-          </SocialIcon>
-        </SocialContainer>
       </Left>
       <Center>
         <Title>Useful Links</Title>
@@ -127,15 +109,29 @@ const Footer = () => {
       <Right>
         <Title>Contact</Title>
         <ContactItem>
-          <Room style={{marginRight:"10px"}}/> 622 Dixie Path , South Tobinchester 98336
+          <Room style={{ marginRight: "10px" }} /> 622 Dixie Path , South
+          Tobinchester 98336
         </ContactItem>
         <ContactItem>
-          <Phone style={{marginRight:"10px"}}/> +1 234 56 78
+          <Phone style={{ marginRight: "10px" }} /> +1 234 56 78
         </ContactItem>
         <ContactItem>
-          <MailOutline style={{marginRight:"10px"}} /> contact@lama.dev
+          <MailOutline style={{ marginRight: "10px" }} /> contact@lama.dev
         </ContactItem>
-        <Payment src="https://i.ibb.co/Qfvn4z6/payment.png" />
+        <SocialContainer>
+          <SocialIcon color="3B5999">
+            <Facebook />
+          </SocialIcon>
+          <SocialIcon color="E4405F">
+            <Instagram />
+          </SocialIcon>
+          <SocialIcon color="55ACEE">
+            <Twitter />
+          </SocialIcon>
+          <SocialIcon color="E60023">
+            <Pinterest />
+          </SocialIcon>
+        </SocialContainer>
       </Right>
     </Container>
   );
