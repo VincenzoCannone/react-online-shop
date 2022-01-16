@@ -9,6 +9,8 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  margin: 0 5px;
+  ${mobile({ margin: "auto" })}
 `;
 const Title = styled.h1`
   font-size: 70px;
@@ -20,7 +22,6 @@ const Desc = styled.div`
   font-weight: 300;
   margin-bottom: 20px;
   ${mobile({ textAlign: "center" })}
-
 `;
 
 const InputContainer = styled.div`

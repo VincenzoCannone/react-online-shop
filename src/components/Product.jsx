@@ -32,18 +32,19 @@ const Container = styled.div`
   background-color: #f5fbfd;
   position: relative;
 
-  &:hover ${Info}{
+  &:hover ${Info} {
     opacity: 1;
   }
 `;
 
-const Circle = styled.div`
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  background-color: white;
-  position: absolute;
-`;
+// const Circle = styled.div`
+//   width: 150px;
+//   height: 150px;
+//   border-radius: 50%;
+//   background-color: #dbc9c9;
+//   position: absolute;
+//   opacity: 0.4;
+// `;
 
 const Image = styled.img`
   height: 75%;
@@ -69,7 +70,7 @@ const Icon = styled.div`
 const Product = ({ item }) => {
   return (
     <Container>
-      <Circle />
+      {/* <Circle /> */}
       <Image src={item.img} />
       <Info>
         <Icon>

@@ -1,14 +1,13 @@
 import styled from "styled-components";
 import { categories } from "../data";
-import { ipad, mobile } from "../responsive";
+import { mobile } from "../responsive";
 import CategoryItem from "./CategoryItem";
 
 const Container = styled.div`
   display: flex;
   padding: 20px;
   justify-content: space-between;
-  ${mobile({ padding: "0px", flexDirection: "column" })};
-  ${ipad({ padding: "0px", flexDirection: "column" })}
+  ${mobile({ padding: 0, flexDirection: "column", margin: "0 2px" })};
 `;
 
 const Categories = () => {
