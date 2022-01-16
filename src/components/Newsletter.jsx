@@ -20,8 +20,8 @@ const Title = styled.h1`
 const Desc = styled.div`
   font-size: 24px;
   font-weight: 300;
-  margin-bottom: 20px;
-  ${mobile({ textAlign: "center" })}
+  margin: 0.5rem;
+  ${mobile({ textAlign: "center" })};
 `;
 
 const InputContainer = styled.div`
@@ -51,7 +51,7 @@ const Newsletter = () => {
   return (
     <Container>
       <Title>Newsletter</Title>
-      <Desc>Get timely updates from your favorite products.</Desc>
+      <Desc>Get the latest arrivals and discount (only twice a Year)</Desc>
       <InputContainer>
         <Input placeholder="Your email" />
         <Button>

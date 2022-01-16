@@ -1,5 +1,5 @@
-import styled from "styled-components";
 import { mobile } from "../responsive";
+import styled, { keyframes } from "styled-components";
 
 const Container = styled.div`
   flex: 1;
@@ -14,7 +14,19 @@ const Image = styled.img`
   object-fit: cover;
   ${mobile({ height: "20vh" })}
 `;
+const infoA = keyframes`
+   
+   
+  0% {
+    transform: scale(0);
+  }
 
+  100% {
+    transform: scale(1);
+  
+}
+
+`;
 const Info = styled.div`
   position: absolute;
   top: 0;
@@ -25,6 +37,8 @@ const Info = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  animation: ${infoA} 2s ease 10s 3 normal forwards;
+  ${mobile({ animation: "none" })}; ;
 `;
 
 const Title = styled.h1`
@@ -36,10 +50,11 @@ const Title = styled.h1`
 const Button = styled.button`
   border: none;
   padding: 10px;
-  background-color: white;
-  color: gray;
+  background-color: transparent;
+  color: #ffecec;
   cursor: pointer;
-  font-weight: 600;
+  font-weight: 900;
+  border: #ffecec solid 3px;
 `;
 
 const CategoryItem = ({ item }) => {
