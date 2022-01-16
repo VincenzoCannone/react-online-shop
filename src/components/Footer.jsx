@@ -14,6 +14,7 @@ const Container = styled.div`
   display: flex;
   margin: 0 5px;
   ${mobile({ flexDirection: "column" })}
+  font-size: 1rem;
 `;
 
 const Left = styled.div`
@@ -31,6 +32,7 @@ const Desc = styled.p`
 
 const SocialContainer = styled.div`
   display: flex;
+  cursor: pointer;
 `;
 
 const SocialIcon = styled.div`
@@ -79,6 +81,7 @@ const ContactItem = styled.div`
   margin-bottom: 20px;
   display: flex;
   align-items: center;
+  cursor: pointer;
 `;
 
 const Footer = () => {
