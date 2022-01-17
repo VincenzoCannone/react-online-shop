@@ -52,7 +52,7 @@ const Center = styled.div`
 
 const Logo = styled.h1`
   font-weight: bold;
-  font-size: 2rem;
+  font-size: 2.5rem;
   ${mobile({ fontSize: "1.5rem" })}
 `;
 const Right = styled.div`
