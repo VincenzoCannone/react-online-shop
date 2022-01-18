@@ -32,7 +32,7 @@ const infoA = keyframes`
 `;
 const Container = styled.div`
   height: 40px;
-  background-color: teal;
+  background-color: #3fc7c7;
   color: white;
   display: flex;
   align-items: center;

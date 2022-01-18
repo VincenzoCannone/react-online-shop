@@ -37,18 +37,13 @@ const Container = styled.div`
   }
 `;
 
-// const Circle = styled.div`
-//   width: 150px;
-//   height: 150px;
-//   border-radius: 50%;
-//   background-color: #dbc9c9;
-//   position: absolute;
-//   opacity: 0.4;
-// `;
-
 const Image = styled.img`
   height: 75%;
   z-index: 2;
+`;
+
+const Title = styled.h1`
+  font-size: 2rem;
 `;
 
 const Icon = styled.div`
@@ -70,8 +65,8 @@ const Icon = styled.div`
 const Product = ({ item }) => {
   return (
     <Container>
-      {/* <Circle /> */}
       <Image src={item.img} />
+      <Title src={item.title} />
       <Info>
         <Icon>
           <ShoppingCartOutlined />

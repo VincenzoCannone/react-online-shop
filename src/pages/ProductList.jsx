@@ -45,10 +45,8 @@ const ProductList = () => {
       <FilterContainer>
         <Filter>
           <FilterText>Filter Products:</FilterText>
-          <Select>
-            <Option disabled selected>
-              Color
-            </Option>
+          <Select defaultValue>
+            <Option disabled>Color</Option>
             <Option>White</Option>
             <Option>Black</Option>
             <Option>Red</Option>
@@ -56,10 +54,8 @@ const ProductList = () => {
             <Option>Yellow</Option>
             <Option>Green</Option>
           </Select>
-          <Select>
-            <Option disabled selected>
-              Size
-            </Option>
+          <Select defaultValue>
+            <Option disabled>Size</Option>
             <Option>XS</Option>
             <Option>S</Option>
             <Option>M</Option>
