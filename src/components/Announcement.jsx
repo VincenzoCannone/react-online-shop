@@ -31,19 +31,20 @@ const infoA = keyframes`
 }
 `;
 const Container = styled.div`
-  height: 40px;
+  height: 2.5rem;
   background-color: #3fc7c7;
-  color: white;
+  color: black;
   display: flex;
   align-items: center;
   justify-content: center;
 `;
 
 const Title = styled.h2`
-  font-size: 1rem;
+  font-size: 1.3rem;
   font-weight: 600;
   animation: ${infoA} 2.5s ease 2s 3 normal forwards;
-  ${mobile({ height: "20px" })};
+  text-shadow: 1px 1px 1px white;
+  ${mobile({ height: "20px", fontSize: "1rem" })};
 `;
 
 const Announcement = () => {

@@ -90,9 +90,9 @@ const Footer = () => {
       <Left>
         <Logo>Enzo.</Logo>
         <Desc>
-          There are many variations of passages of Lorem Ipsum available, but
-          the majority have suffered alteration in some form, by injected
-          humour, or randomised words ....
+          Discover a wide collection of brand new reproduction of vintage
+          sunglasses suitable for Men and Women, inspired by the most popular
+          sunglasses designs from the 60s 70s 80s 90s
         </Desc>
       </Left>
       <Center>
@@ -100,27 +100,26 @@ const Footer = () => {
         <List>
           <ListItem>Home</ListItem>
           <ListItem>Cart</ListItem>
-          <ListItem>Man Fashion</ListItem>
-          <ListItem>Woman Fashion</ListItem>
-          <ListItem>Accessories</ListItem>
-          <ListItem>My Account</ListItem>
-          <ListItem>Order Tracking</ListItem>
-          <ListItem>Wishlist</ListItem>
-          <ListItem>Wishlist</ListItem>
+          <ListItem>Blog</ListItem>
+          <ListItem>Privacy</ListItem>
+          <ListItem>Impressum</ListItem>
+          <ListItem>Return</ListItem>
+          <ListItem>Track Your Order</ListItem>
+          <ListItem>FAQ</ListItem>
           <ListItem>Terms</ListItem>
+          <ListItem>Careers</ListItem>
         </List>
       </Center>
       <Right>
         <Title>Contact</Title>
         <ContactItem>
-          <Room style={{ marginRight: "10px" }} /> 622 Dixie Path , South
-          Tobinchester 98336
+          <Room style={{ marginRight: "10px" }} /> Leipziger Pl. 12 Berlin 10115
         </ContactItem>
         <ContactItem>
           <Phone style={{ marginRight: "10px" }} /> +1 234 56 78
         </ContactItem>
         <ContactItem>
-          <MailOutline style={{ marginRight: "10px" }} /> contact@lama.dev
+          <MailOutline style={{ marginRight: "10px" }} /> cucu@cucu.com
         </ContactItem>
         <SocialContainer>
           <SocialIcon color="3B5999">

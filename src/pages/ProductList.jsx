@@ -64,18 +64,16 @@ const ProductList = () => {
             <Option disabled>Color</Option>
             <Option>white</Option>
             <Option>black</Option>
-            <Option>red</Option>
-            <Option>blue</Option>
-            <Option>yellow</Option>
+            <Option>brown</Option>
+            <Option>champagne</Option>
+            <Option>orange</Option>
             <Option>green</Option>
           </Select>
           <Select name="size" onChange={handleFilters}>
             <Option disabled>Size</Option>
-            <Option>XS</Option>
-            <Option>S</Option>
-            <Option>M</Option>
-            <Option>L</Option>
-            <Option>XL</Option>
+            <Option>small</Option>
+            <Option>standard</Option>
+            <Option>oversize</Option>
           </Select>
         </Filter>
         <Filter>

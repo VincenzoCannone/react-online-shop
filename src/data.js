@@ -25,20 +25,20 @@ export const sliderItems = [
 export const categories = [
   {
     id: 1,
-    img: "https://images.pexels.com/photos/5886041/pexels-photo-5886041.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    title: "SHIRT STYLE!",
-    cat: "camise",
+    img: "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1582595403-pdp-february-jezabell-rimless-black-1080x1080-92399b56-d00f-46ff-85ec-eeb9029c4c26-1025x-1582595388.jpg?crop=0.668xw:1.00xh;0.0897xw,0&resize=480:*",
+    title: "SUNGLASSES",
+    cat: "sunglasses",
   },
   {
     id: 2,
     img: "https://images.pexels.com/photos/2983464/pexels-photo-2983464.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    title: "LOUNGEWEAR LOVE",
+    title: "T-SHIRTS",
     cat: "tshirt",
   },
   {
     id: 3,
     img: "https://images.pexels.com/photos/5480696/pexels-photo-5480696.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-    title: "LIGHT JACKETS",
+    title: "JACKETS",
     cat: "jacket",
   },
 ];
@@ -47,7 +47,9 @@ export const popularProducts = [
   {
     id: 1,
     img: "https://d3o2e4jr3mxnm3.cloudfront.net/Mens-Jake-Guitar-Vintage-Crusher-Tee_68382_1_lg.png",
-    cat: "tshirt",
+    cat: ["sunglasses", "black", "standard"],
+    color: ["black"],
+    size: ["standard"],
   },
   {
     id: 2,

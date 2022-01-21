@@ -4,9 +4,8 @@ import ProductList from "./pages/ProductList";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import Cart from "./pages/Cart";
-import Success from "./components/Success";
+// import Success from "./pages/Success";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Products from "./components/Products";
 
 //! Router V6!!!
 // in Products categories we can add instead of categories ( ex all,women ,blue, xl)
