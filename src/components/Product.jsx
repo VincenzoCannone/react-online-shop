@@ -26,8 +26,8 @@ const Info = styled.div`
 
 const Container = styled.div`
   flex: 1;
-  margin: 4px;
-  width: 450px;
+  margin: 5px;
+  min-width: 280px;
   height: 350px;
   display: flex;
   align-items: center;
@@ -41,14 +41,10 @@ const Container = styled.div`
 `;
 
 const Image = styled.img`
-  min-width: 280px;
-  height: 350px;
+  height: 75%;
+  width: 95%;
   z-index: 2;
-  ${mobile({ height: "58%", width: "98%" })}
-`;
-
-const Title = styled.h1`
-  font-size: 2rem;
+  ${mobile({ height: "65%", width: "85%" })};
 `;
 
 const Icon = styled.div`
@@ -71,7 +67,7 @@ const Icon = styled.div`
 const Product = ({ item }) => {
   return (
     <Container>
-      <Title src={item.title} />
+      {/* <Title src={item.title} /> */}
       <Image src={item.img} />
       <Info>
         <Icon>

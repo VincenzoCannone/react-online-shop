@@ -22,10 +22,8 @@ const ImgContainer = styled.div`
 `;
 
 const Image = styled.img`
-  width: auto;
-  height: auto;
   object-fit: cover;
-  ${mobile({ height: "40vh" })}
+  ${mobile({ height: "23vh" })}
 `;
 
 const InfoContainer = styled.div`
@@ -66,6 +64,7 @@ const FilterTitle = styled.span`
 `;
 
 const FilterColor = styled.div`
+  border: 1px solid;
   width: 20px;
   height: 20px;
   border-radius: 50%;
