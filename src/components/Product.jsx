@@ -41,10 +41,10 @@ const Container = styled.div`
 `;
 
 const Image = styled.img`
-  height: 75%;
+  height: 55%;
   width: 95%;
   z-index: 2;
-  ${mobile({ height: "65%", width: "85%" })};
+  ${mobile({ height: "55%", width: "90%" })};
 `;
 
 const Icon = styled.div`
@@ -62,12 +62,12 @@ const Icon = styled.div`
     transform: scale(1.1);
   }
 `;
-//! we dont need outh to check th eproduct in our shop online
+
+//! we dont need Auth to check the product in our shop online
 
 const Product = ({ item }) => {
   return (
     <Container>
-      {/* <Title src={item.title} /> */}
       <Image src={item.img} />
       <Info>
         <Icon>

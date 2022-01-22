@@ -26,7 +26,7 @@ const Products = ({ cat, filters, sort }) => {
             : `http://localhost:3000/api/products`
         );
 
-        //! CHECK
+        //! CHECK CATEGORY
         console.log(res);
 
         setProducts(res.data);
@@ -72,5 +72,4 @@ const Products = ({ cat, filters, sort }) => {
     </Container>
   );
 };
-
 export default Products;

@@ -2,23 +2,23 @@ export const sliderItems = [
   {
     id: 1,
     img: "https://static.wixstatic.com/media/91b8e6_94e3175f9a7d48a6978061f6841916f0~mv2.png",
-    title: "SUMMER SALE",
+    title: "NEVER WITHOUT",
     desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
     bg: "f5fafd",
   },
   {
     id: 2,
     img: "https://static.wixstatic.com/media/91b8e6_2e277e9847ae49febddbe6f09159cd0c~mv2.png",
-    title: "AUTUMN COLLECTION",
+    title: "SPRING COLLECTION",
     desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
     bg: "fcf1ed",
   },
   {
     id: 3,
     img: "https://static.wixstatic.com/media/91b8e6_2634b2aab23c4125a42c4fe8212da1aa~mv2.png",
-    title: "LOUNGEWEAR LOVE",
+    title: "BLUE MONDAY VIBES",
     desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
-    bg: "fbf0f4",
+    bg: "fbf0cc",
   },
 ];
 
