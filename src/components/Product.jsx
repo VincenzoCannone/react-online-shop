@@ -28,7 +28,7 @@ const Container = styled.div`
   flex: 1;
   margin: 5px;
   min-width: 280px;
-  height: 350px;
+  height: 300px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -42,9 +42,9 @@ const Container = styled.div`
 
 const Image = styled.img`
   height: 55%;
-  width: 95%;
+  width: auto;
   z-index: 2;
-  ${mobile({ height: "55%", width: "90%" })};
+  ${mobile({ height: "55%" })};
 `;
 
 const Icon = styled.div`

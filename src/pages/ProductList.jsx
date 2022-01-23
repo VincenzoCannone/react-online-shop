@@ -63,7 +63,7 @@ const ProductList = () => {
           <Select name="color" onChange={handleFilters}>
             <Option disabled>Color</Option>
             <Option>white</Option>
-            <Option>black</Option>
+            <Option defaultValue>black</Option>
             <Option>brown</Option>
             <Option>champagne</Option>
             <Option>orange</Option>
@@ -72,7 +72,7 @@ const ProductList = () => {
           <Select name="size" onChange={handleFilters}>
             <Option disabled>Size</Option>
             <Option>small</Option>
-            <Option>standard</Option>
+            <Option defaultValue>standard</Option>
             <Option>oversize</Option>
           </Select>
         </Filter>

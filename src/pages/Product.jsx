@@ -146,13 +146,13 @@ const Product = () => {
     }
   };
   //! Check
-  console.log(`Quantity of the item to purchased is ${quantity}`);
+  console.log(`Item ID ${id} selected, number of pieces : ${quantity}`);
 
   //! UPDATE CART USING REDUX
   const handleClick = () => {
     dispatch(addProduct({ ...product, quantity, color, size }));
   };
-
+  console.log({ product, quantity });
   return (
     <Container>
       <Navbar />
