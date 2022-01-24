@@ -138,6 +138,12 @@ const Product = () => {
     getProduct();
   }, [id]);
 
+  //! Check
+  console.log(`Item ID ${id} selected, number of pieces : ${quantity}`);
+
+  //! CHECK
+  console.log({ id, quantity });
+
   const handleQuantity = (type) => {
     if (type === "dec") {
       quantity > 1 && setQuantity(quantity - 1);
@@ -145,14 +151,11 @@ const Product = () => {
       setQuantity(quantity + 1);
     }
   };
-  //! Check
-  console.log(`Item ID ${id} selected, number of pieces : ${quantity}`);
-
   //! UPDATE CART USING REDUX
   const handleClick = () => {
-    dispatch(addProduct({ ...product, quantity, color, size }));
+    dispatch(addProduct({ ...product, quantity }));
   };
-  console.log({ product, quantity });
+
   return (
     <Container>
       <Navbar />

@@ -5,6 +5,12 @@ import Announcement from "../components/Announcement";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import { mobile } from "../responsive";
+import StripeCheckout from "react-stripe-checkout";
+// import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+
+const Key = process.env.REACT_APP_STRIPE;
 
 const Container = styled.div``;
 
@@ -83,6 +89,7 @@ const ProductColor = styled.div`
   height: 20px;
   border-radius: 50%;
   background-color: ${(props) => props.color};
+  border: 1px solid;
 `;
 
 const ProductSize = styled.span``;
@@ -102,14 +109,15 @@ const ProductAmountContainer = styled.div`
 `;
 
 const ProductAmount = styled.div`
-  font-size: 24px;
+  font-size: 1.5rem;
+  font-weight: 600;
   margin: 5px;
-  ${mobile({ margin: "5px 15px" })}
+  ${mobile({ marginBottom: "0" })}
 `;
 
 const ProductPrice = styled.div`
-  font-size: 30px;
-  font-weight: 200;
+  font-size: 2rem;
+  font-weight: 600;
   ${mobile({ marginBottom: "20px" })}
 `;
 
@@ -153,6 +161,13 @@ const Button = styled.button`
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
+  const [stripeToken, setStripeToken] = useState(null);
+  // const navigate = useNavigate();
+
+  const onToken = (token) => {
+    setStripeToken(token);
+  };
+  console.log(stripeToken);
   return (
     <Container>
       <Navbar />
@@ -160,7 +175,9 @@ const Cart = () => {
       <Wrapper>
         <Title>YOUR BAG</Title>
         <Top>
-          <TopButton>CONTINUE SHOPPING</TopButton>
+          <Link to="./Product.jsx">
+            <TopButton>CONTINUE SHOPPING</TopButton>
+          </Link>
           <TopTexts>
             <TopText>Shopping Bag(2)</TopText>
             <TopText>Your Wishlist (0)</TopText>
@@ -170,7 +187,7 @@ const Cart = () => {
         <Bottom>
           <Info>
             {cart.products.map((product) => (
-              <Product>
+              <Product key={product._id}>
                 <ProductDetail>
                   <Image src={product.img} />
                   <Details>
@@ -190,7 +207,7 @@ const Cart = () => {
                     <Remove />
                   </ProductAmountContainer>
                   <ProductPrice>
-                    $ {product.price * product.quantity}
+                    Eur {product.price * product.quantity}
                   </ProductPrice>
                 </PriceDetail>
               </Product>
@@ -201,21 +218,31 @@ const Cart = () => {
             <SummaryTitle>ORDER SUMMARY</SummaryTitle>
             <SummaryItem>
               <SummaryItemText>Subtotal</SummaryItemText>
-              <SummaryItemPrice>{cart.total}</SummaryItemPrice>
+              <SummaryItemPrice>Eur {cart.total}</SummaryItemPrice>
             </SummaryItem>
             <SummaryItem>
-              <SummaryItemText>Estimated Shipping</SummaryItemText>
-              <SummaryItemPrice>$ 5.90</SummaryItemPrice>
+              <SummaryItemText>Shipping Cost</SummaryItemText>
+              <SummaryItemPrice>Eur 5.90</SummaryItemPrice>
             </SummaryItem>
             <SummaryItem>
               <SummaryItemText>Shipping Discount</SummaryItemText>
-              <SummaryItemPrice>$ -5.90</SummaryItemPrice>
+              <SummaryItemPrice>Eur -5.90</SummaryItemPrice>
             </SummaryItem>
             <SummaryItem type="total">
               <SummaryItemText>Total</SummaryItemText>
-              <SummaryItemPrice>{cart.total}</SummaryItemPrice>
+              <SummaryItemPrice>Eur {cart.total}</SummaryItemPrice>
             </SummaryItem>
-            <Button>CHECKOUT NOW</Button>
+            <StripeCheckout
+              name="Enzo"
+              image="https://avatars.githubusercontent.com/u/78362846?v=4"
+              billingAddress
+              shippingAddress
+              amount={2000}
+              token={onToken}
+              stripeKey={Key}
+            >
+              <Button>CHECKOUT NOW</Button>
+            </StripeCheckout>
           </Summary>
         </Bottom>
       </Wrapper>

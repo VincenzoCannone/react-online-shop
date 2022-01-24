@@ -9,6 +9,9 @@ npm install react-router-dom
 npm install axios
 npm install react-redux
 npm install @reduxjs/toolkit
+npm install react-stripe-checkout
+npm i use navigate
+npm install react-history-router
 
 For a better understanding of Router v6 => https://www.youtube.com/watch?v=UjHT_NKR_gU
 
