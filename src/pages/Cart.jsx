@@ -6,11 +6,8 @@ import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import { mobile } from "../responsive";
 import StripeCheckout from "react-stripe-checkout";
-// import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-
-const Key = process.env.REACT_APP_STRIPE;
 
 const Container = styled.div``;
 
@@ -162,12 +159,11 @@ const Button = styled.button`
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
   const [stripeToken, setStripeToken] = useState(null);
-  // const navigate = useNavigate();
 
   const onToken = (token) => {
     setStripeToken(token);
   };
-  console.log(stripeToken);
+
   return (
     <Container>
       <Navbar />
@@ -175,14 +171,13 @@ const Cart = () => {
       <Wrapper>
         <Title>YOUR BAG</Title>
         <Top>
-          <Link to="./Product.jsx">
+          <Link to="/products/sunglasses">
             <TopButton>CONTINUE SHOPPING</TopButton>
           </Link>
           <TopTexts>
-            <TopText>Shopping Bag(2)</TopText>
+            <TopText>Shopping Bag (0)</TopText>
             <TopText>Your Wishlist (0)</TopText>
           </TopTexts>
-          <TopButton type="filled">CHECKOUT NOW</TopButton>
         </Top>
         <Bottom>
           <Info>
@@ -218,14 +213,14 @@ const Cart = () => {
             <SummaryTitle>ORDER SUMMARY</SummaryTitle>
             <SummaryItem>
               <SummaryItemText>Subtotal</SummaryItemText>
-              <SummaryItemPrice>Eur {cart.total}</SummaryItemPrice>
+              <SummaryItemPrice> Eur {cart.total} </SummaryItemPrice>
             </SummaryItem>
             <SummaryItem>
               <SummaryItemText>Shipping Cost</SummaryItemText>
               <SummaryItemPrice>Eur 5.90</SummaryItemPrice>
             </SummaryItem>
             <SummaryItem>
-              <SummaryItemText>Shipping Discount</SummaryItemText>
+              <SummaryItemText>Free Shipping</SummaryItemText>
               <SummaryItemPrice>Eur -5.90</SummaryItemPrice>
             </SummaryItem>
             <SummaryItem type="total">
@@ -233,13 +228,13 @@ const Cart = () => {
               <SummaryItemPrice>Eur {cart.total}</SummaryItemPrice>
             </SummaryItem>
             <StripeCheckout
-              name="Enzo"
-              image="https://avatars.githubusercontent.com/u/78362846?v=4"
+              name="Dressyourmind"
+              image="https://i.pinimg.com/280x280_RS/64/8d/32/648d3298cbd97ef9bda463ff01484cf4.jpg"
               billingAddress
               shippingAddress
               amount={2000}
               token={onToken}
-              stripeKey={Key}
+              stripeKey={process.env.REACT_APP_STRIPE}
             >
               <Button>CHECKOUT NOW</Button>
             </StripeCheckout>

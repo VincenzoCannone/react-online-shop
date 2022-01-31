@@ -3,8 +3,6 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import StripeCheckout from "react-stripe-checkout";
 
-const Key = "pk_test_vCoSQQx92TPhOFCP5KOFKAMl";
-
 const Payment = () => {
   const [stripeToken, setStripeToken] = useState(null);
   const navigate = useNavigate();
@@ -28,7 +26,7 @@ const Payment = () => {
         );
         //! Check if the op is successfull
         console.log(res.data);
-        navigate.push("/success", res.data);
+        navigate.push("/success");
       } catch (err) {
         console.log(err);
       }
@@ -55,7 +53,7 @@ const Payment = () => {
           shippingAddress
           amount={2000}
           token={onToken}
-          stripeKey={Key}
+          stripeKey={process.env.REACT_APP_STRIPE}
         >
           <button
             style={{

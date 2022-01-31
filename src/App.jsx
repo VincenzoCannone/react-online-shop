@@ -6,14 +6,15 @@ import Login from "./pages/Login";
 import Cart from "./pages/Cart";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
 import Success from "./components/Success";
 import Payment from "./components/Payment";
 import ScrollToTop from "./scrollTop";
+import { useSelector } from "react-redux";
 
 //! Router V6!!!
 // in Products categories we can add instead of categories ( ex all,women ,blue, xl)
 //  !Product example http://localhost:3000/product/hjsjskhjskhks
+
 const App = () => {
   return (
     <BrowserRouter>

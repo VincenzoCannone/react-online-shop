@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styled from "styled-components";
 import { mobile } from "../responsive";
 
@@ -55,12 +56,71 @@ const Button = styled.button`
 `;
 
 const Register = () => {
+  const [name, setName] = useState("");
+  const [lastname, setLastName] = useState("");
+  const [username, setNewPassword] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const regAuth = (e) => {
+    e.preventDefault();
+    let req = {
+      name: name,
+      lastname: lastname,
+      username: username,
+      email: email,
+      password: password,
+    };
+    //! CHECK
+    console.log(req);
+    const settings = {
+      method: "POST",
+      body: JSON.stringify(req),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+    fetch(`http://localhost:3000/api/auth/register/`, settings)
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          switch (response.status) {
+            case 403:
+              return response.json().then((err) => {
+                throw new Error(err.message);
+              });
+            default:
+              return response.json().then((err) => {
+                throw new Error(err.message);
+              });
+          }
+        }
+      })
+      .then((data) => {
+        setName("");
+        setLastName("");
+        setNewPassword("");
+        setEmail("");
+        setPassword("");
+        console.log(data);
+        window.location.assign("http://localhost:3001/");
+      })
+      .catch((error) => {
+        alert(error.message);
+      });
+  };
+
   return (
     <Container>
       <Wrapper>
         <Title>CREATE AN ACCOUNT</Title>
-        <Form>
-          <Input placeholder="name" />
+        <Form onSubmit={regAuth}>
+          <Input
+            type="name"
+            onChange={(e) => setName(e.target.value)}
+            placeholder="name"
+          />
           <Input placeholder="last name" />
           <Input placeholder="username" />
           <Input placeholder="email" />

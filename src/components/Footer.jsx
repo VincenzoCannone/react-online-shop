@@ -7,6 +7,7 @@ import {
   Room,
   Twitter,
 } from "@material-ui/icons";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { mobile } from "../responsive";
 
@@ -88,18 +89,20 @@ const Footer = () => {
   return (
     <Container>
       <Left>
-        <Logo>Enzo.</Logo>
+        <Logo>DressYourMind</Logo>
         <Desc>
           Discover a wide collection of brand new reproduction of vintage
-          sunglasses suitable for Men and Women, inspired by the most popular
-          sunglasses designs from the 60s 70s 80s 90s
+          sunglasses and appareal, inspired by the most popular sunglasses
+          designs from the 60s 70s 80s 90s
         </Desc>
       </Left>
       <Center>
         <Title>Useful Links</Title>
         <List>
           <ListItem>Home</ListItem>
-          <ListItem>Cart</ListItem>
+          <Link style={{ textDecoration: "none", color: "black" }} to={`/cart`}>
+            <ListItem>Cart</ListItem>
+          </Link>
           <ListItem>Blog</ListItem>
           <ListItem>Privacy</ListItem>
           <ListItem>Impressum</ListItem>

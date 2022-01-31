@@ -4,14 +4,9 @@ ES7 React/Redux/GraphQL/React-Native snippets Better Comments
 
 // Dependencies
 
-npm i "styled-components" @mui/material @emotion/react @emotion/styled @material-ui/icons
-npm install react-router-dom
-npm install axios
-npm install react-redux
-npm install @reduxjs/toolkit
-npm install react-stripe-checkout
-npm i use navigate
-npm install react-history-router
+npm i "styled-components" @mui/material @emotion/react @emotion/styled @material-ui/icons react-router-dom axios react-redux @reduxjs/toolkit react-stripe-checkout
+use navigate
+ react-history-router
 
 For a better understanding of Router v6 => https://www.youtube.com/watch?v=UjHT_NKR_gU
 

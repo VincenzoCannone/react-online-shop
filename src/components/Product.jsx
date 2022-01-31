@@ -6,7 +6,7 @@ import {
 
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { mobile } from "../responsive";
+import { FacebookShareButton } from "react-share";
 
 const Info = styled.div`
   opacity: 0;
@@ -44,7 +44,6 @@ const Image = styled.img`
   height: 55%;
   width: auto;
   z-index: 2;
-  ${mobile({ height: "55%" })};
 `;
 
 const Icon = styled.div`
@@ -79,7 +78,11 @@ const Product = ({ item }) => {
           </Link>
         </Icon>
         <Icon>
-          <FavoriteBorderOutlined />
+          <FacebookShareButton
+            url={"https://start.digitalcareerinstitute.org/"}
+          >
+            <FavoriteBorderOutlined />
+          </FacebookShareButton>
         </Icon>
       </Info>
     </Container>

@@ -1,10 +1,10 @@
 import { Badge } from "@material-ui/core";
 import { Search, ShoppingCartOutlined } from "@material-ui/icons";
 import React from "react";
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { mobile } from "../responsive";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const Container = styled.div`
   height: 60px;
@@ -55,25 +55,30 @@ const Center = styled.div`
 const Logo = styled.h1`
   font-weight: bold;
   font-size: 2.5rem;
-  ${mobile({ fontSize: "1.5rem" })}
+  ${mobile({ fontSize: "1.2em" })}
 `;
 const Right = styled.div`
   flex: 1;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  ${mobile({ flex: "1.4", justifyContent: "flex-start" })};
+  ${mobile({ justifyContent: "flex-end", marginRight: "0.6rem" })};
 `;
 
 const MenuItem = styled.div`
   font-size: 1rem;
   cursor: pointer;
   margin-left: 2rem;
-  ${mobile({ fontSize: "12px", marginLeft: "10px" })}
+  ${mobile({
+    textDecoration: "unset",
+    fontSize: "0.6rem",
+    marginLeft: "10px",
+  })};
 `;
 
 const Navbar = () => {
   const quantity = useSelector((state) => state.cart.quantity);
+
   return (
     <Container>
       <Wrapper>
@@ -86,20 +91,23 @@ const Navbar = () => {
         </Left>
         <Center>
           <Link style={{ textDecoration: "none", color: "black" }} to={`/`}>
-            <Logo>Enzo.</Logo>
+            <Logo>DressYourMind</Logo>
           </Link>
         </Center>
         <Right>
-          <MenuItem>REGISTER</MenuItem>
-          <MenuItem>SIGN IN</MenuItem>
-          <Link to="/cart">
+          <Link style={{ textDecoration: "none", color: "black" }} to="/login">
+            <MenuItem style={{ display: "none" }}>SIGN IN</MenuItem>
+          </Link>
+          <Link
+            style={{ textDecoration: "none", color: "black" }}
+            to="/register"
+          >
+            <MenuItem>Welcome Enzo</MenuItem>
+          </Link>
+          <Link style={{ textDecoration: "none", color: "black" }} to="/cart">
             <MenuItem>
-              <Badge
-                badgeContent={quantity}
-                style={{ fontSize: "5px" }}
-                color="secondary"
-              >
-                <ShoppingCartOutlined />
+              <Badge badgeContent={quantity} color="secondary">
+                <ShoppingCartOutlined style={{ fontSize: "1.2rem" }} />
               </Badge>
             </MenuItem>
           </Link>

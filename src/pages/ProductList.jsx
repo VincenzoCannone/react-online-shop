@@ -5,8 +5,9 @@ import Products from "../components/Products";
 import Newsletter from "../components/Newsletter";
 import Footer from "../components/Footer";
 import { mobile } from "../responsive";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
+import { ArrowBack } from "@material-ui/icons";
 
 const Container = styled.div``;
 
@@ -38,6 +39,12 @@ const Select = styled.select`
 `;
 const Option = styled.option``;
 
+const Home = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+`;
+
 const ProductList = () => {
   const location = useLocation();
   const cat = location.pathname.split("/")[2];
@@ -56,28 +63,67 @@ const ProductList = () => {
     <Container>
       <Navbar />
       <Announcement />
-      <Title>{cat}</Title>
+      <Home>
+        <Title>{cat}</Title>
+        <Link
+          style={{ textDecoration: "none", color: "black" }}
+          to="categories"
+        >
+          <Title>
+            <ArrowBack style={{ color: "red" }}></ArrowBack>
+            Go back
+          </Title>
+        </Link>
+      </Home>
       <FilterContainer>
         <Filter>
           <FilterText>Filter Products:</FilterText>
           <Select name="color" onChange={handleFilters}>
             <Option disabled>Color</Option>
             <Option>white</Option>
-            <Option defaultValue>black</Option>
+            <Option>black</Option>
             <Option>brown</Option>
-            <Option>champagne</Option>
-            <Option>orange</Option>
-            <Option>green</Option>
+            <Option>yellow</Option>
+            <Option defaultValue>orange</Option>
           </Select>
-          <Select name="size" onChange={handleFilters}>
-            <Option disabled>Size</Option>
-            <Option>small</Option>
-            <Option defaultValue>standard</Option>
-            <Option>oversize</Option>
-          </Select>
+          {/* <Select name="gender" onChange={handleFilters}>
+            <Option disabled>Gender</Option>
+            <Option>women</Option>
+            <Option defaultValue>unisex</Option>
+            <Option>men</Option>
+          </Select> */}
+          {cat === "sunglasses" ? (
+            <Select name="size" onChange={handleFilters}>
+              <Option disabled>Size</Option>
+              <Option>oversize</Option>
+              <Option defaultValue>standard</Option>
+              <Option>small</Option>
+            </Select>
+          ) : (
+            <Select name="size" onChange={handleFilters}>
+              <Option disabled>Size</Option>
+              <Option>xs</Option>
+              <Option>s</Option>
+              <Option defaultValue>m</Option>
+              <Option>l</Option>
+              <Option>xl</Option>
+              <Option>xxl</Option>
+            </Select>
+          )}
         </Filter>
         <Filter>
           <FilterText>Sort Products:</FilterText>
+          {cat === "sunglasses" || cat === "tshirt" ? (
+            <></>
+          ) : (
+            <Select name="season" onChange={handleFilters}>
+              <Option disabled>Season</Option>
+              <Option defaultValue>spring</Option>
+              <Option>summer</Option>
+              <Option>autumn</Option>
+              <Option>winter</Option>
+            </Select>
+          )}
           <Select onChange={(e) => setSort(e.target.value)}>
             <Option value="newest">Newest</Option>
             <Option value="asc">Price (asc)</Option>

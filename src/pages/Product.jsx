@@ -5,7 +5,7 @@ import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import Newsletter from "../components/Newsletter";
 import { mobile } from "../responsive";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { publicRequest } from "../requestMethods";
 import { addProduct } from "../redux/cartRedux";
@@ -118,6 +118,23 @@ const Button = styled.button`
     background-color: #f8f4f4;
   }
 `;
+
+const TopButton = styled.button`
+  padding: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  border: ${(props) => props.type === "filled" && "none"};
+  background-color: ${(props) =>
+    props.type === "filled" ? "black" : "transparent"};
+  color: ${(props) => props.type === "filled" && "white"};
+`;
+
+const ContainerButton = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+`;
 //! we dont need outh to check th eproduct in our shop online
 const Product = () => {
   const location = useLocation();
@@ -126,6 +143,9 @@ const Product = () => {
   const [quantity, setQuantity] = useState(1);
   const [color, setColor] = useState("");
   const [size, setSize] = useState("");
+  const [gender, setGender] = useState("");
+  const [season, setSeason] = useState("");
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -139,7 +159,7 @@ const Product = () => {
   }, [id]);
 
   //! Check
-  console.log(`Item ID ${id} selected, number of pieces : ${quantity}`);
+  // console.log(`Item ID ${id} selected, number of pieces : ${quantity}`);
 
   //! CHECK
   console.log({ id, quantity });
@@ -151,6 +171,7 @@ const Product = () => {
       setQuantity(quantity + 1);
     }
   };
+
   //! UPDATE CART USING REDUX
   const handleClick = () => {
     dispatch(addProduct({ ...product, quantity }));
@@ -160,7 +181,13 @@ const Product = () => {
     <Container>
       <Navbar />
       <Announcement />
+
       <Wrapper>
+        <ContainerButton>
+          <Link to="/products/sunglasses">
+            <TopButton>CONTINUE SHOPPING</TopButton>
+          </Link>
+        </ContainerButton>
         <ImgContainer>
           <Image src={product.img} />
         </ImgContainer>
